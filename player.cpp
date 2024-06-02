@@ -1,24 +1,28 @@
 #include "player.h"
 
+#include <limits>
 #include <iostream>
 
 Player::Player() {
 }
 
-int Player::inputPlayer() {
-    while (true) {
-        std::cin >> choice;
+void Player::clearInputPlayer()
+{
+    std::cin.clear();
+    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
 
-        if (std::cin.fail()) {
-            std::cin.clear();
-            std::cin.ignore();
-        } else {
-            choice = choice - 1;
-
-            if (choice >= 0 and choice <= 8)
-                break;
-        }
+bool Player::checkInputPlayer(int choice)
+{
+    if (std::cin.fail()) {
+        return 0;
     }
+    else
+        return 1;
+}
+
+int Player::inputPlayer() {
+    std::cin >> choice;
 
     return choice;
 }

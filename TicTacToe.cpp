@@ -1,15 +1,15 @@
 #include "board.h"
-#include "player.h"
 
 #include <iostream>
 
 int main() {
-    Board myBoard;
+	Board myBoard;
 
-    while (true) {
-        myBoard.printBoard();
-        myBoard.markBoard();
-    }
+	while (true) {
+		myBoard.printBoard();
 
-    return 0;
+		myBoard.markBoard();
+	}
+
+	return 0;
 }

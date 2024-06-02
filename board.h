@@ -6,23 +6,23 @@
 
 class Board {
 public:
-    int choice;
+	Player myPlayer;
 
-    char turn = 'X';
+	char turn = 'X';
 
-    char pos[9];
+	int choice;
 
-    Player myPlayer;
+	char pos[9];
 
-    Board();
+	Board();
 
-    int turnBoard();
+	int turnBoard();
 
-    void markBoard();
+	void markBoard();
 
-    void clearBoard();
+	void clearBoard();
 
-    void printBoard();
+	void printBoard();
 };
 
 

@@ -1,14 +1,17 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-
 class Player {
 public:
-    int choice;
+	int choice;
 
-    Player();
+	Player();
 
-    int inputPlayer();
+	void clearInputPlayer();
+
+	bool checkInputPlayer(int choice);
+
+	int inputPlayer();
 };
 
 
