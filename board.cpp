@@ -32,16 +32,25 @@ int Board::turnBoard() {
 bool Board::checkWin() {
 	for (int i = 0; i < 9; i += 3)
 		if (pos[i] == pos[i + 1] and pos[i + 1] == pos[i + 2])
-			return 1;
+			gameOver = true;
 
 	for (int i = 0; i < 3; i++)
 		if (pos[i] == pos[i + 3] and pos[i + 3] == pos[i + 6])
-			return 1;
+			gameOver = true;
 
-	if (pos[0] == pos[4] and pos[4] == pos[8] or pos[2] == pos[4] and pos[4] == pos[6])
+	if (pos[0] == pos[4] and pos[4] == pos[8]
+		or pos[2] == pos[4] and pos[4] == pos[6])
+		gameOver = true;
+
+	if (gameOver) {
+		clearBoard();
+
+		printBoard();
+
 		return 1;
-
-	return 0;
+	}
+	else
+		return 0;
 }
 
 void Board::markBoard() {
