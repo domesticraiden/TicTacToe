@@ -5,7 +5,7 @@
 int main() {
 	Board myBoard;
 
-	while (true) {
+	while (!myBoard.checkWin()) {
 		myBoard.printBoard();
 
 		myBoard.markBoard();

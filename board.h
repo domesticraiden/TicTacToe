@@ -1,14 +1,16 @@
 #ifndef BOARD_H
 #define BOARD_H
 
-#include "player.h"
+#include "input.h"
 
 
 class Board {
 public:
-	Player myPlayer;
+	Input myInput;
 
-	char turn = 'X';
+	bool gameOver;
+
+	char turn;
 
 	int choice;
 
@@ -16,13 +18,15 @@ public:
 
 	Board();
 
-	int turnBoard();
-
 	void markBoard();
 
 	void clearBoard();
 
 	void printBoard();
+
+	bool checkWin();
+
+	int turnBoard();
 };
 
 

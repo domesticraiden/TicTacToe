@@ -3,24 +3,35 @@
 #include <cstdlib>
 #include <iostream>
 
-Board::Board() : myPlayer() {
+Board::Board() : myInput() {
+	gameOver = false;
+
+	turn = 'X';
+
 	int j{ 1 };
 	for (int i = 0; i < 9; i++)
 		pos[i] = '0' + j++;
 }
 
-void Board::markBoard() {
-	choice = myPlayer.inputPlayer();
+bool Board::checkWin() {
+	if (!gameOver)
+		return 0;
+	else
+		return 1;
+}
 
-	while (!myPlayer.checkInputPlayer(choice))
+void Board::markBoard() {
+	choice = myInput.useInput(choice);
+
+	while (!myInput.checkType(choice))
 	{
-		myPlayer.clearInputPlayer();
+		myInput.clearInput();
 
 		clearBoard();
 
 		printBoard();
 
-		choice = myPlayer.inputPlayer();
+		choice = myInput.useInput(choice);
 	}
 
 	pos[choice - 1] = turn;
