@@ -24,6 +24,8 @@ public:
 
 	void printBoard();
 
+	bool checkCollision();
+
 	bool checkWin();
 
 	int turnBoard();

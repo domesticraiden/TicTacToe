@@ -8,9 +8,9 @@ Input::Input() {
 
 bool Input::checkType(int choice) {
 	if (std::cin.fail())
-		return 0;
-	else
 		return 1;
+	else
+		return 0;
 }
 
 void Input::clearInput() {
