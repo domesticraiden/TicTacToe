@@ -20,6 +20,15 @@ bool Board::checkCollision() {
 		return 0;
 }
 
+int Board::turnBoard() {
+	switch (turn) {
+	case 'X':
+		return 'O';
+	case 'O':
+		return 'X';
+	}
+}
+
 bool Board::checkWin() {
 	for (int i = 0; i < 9; i += 3)
 		if (pos[i] == pos[i + 1] and pos[i + 1] == pos[i + 2])
@@ -52,15 +61,6 @@ void Board::markBoard() {
 	pos[choice - 1] = turn;
 
 	turn = turnBoard();
-}
-
-int Board::turnBoard() {
-	switch (turn) {
-	case 'X':
-		return 'O';
-	case 'O':
-		return 'X';
-	}
 }
 
 void Board::clearBoard() {
