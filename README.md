@@ -1,3 +1,3 @@
 # TicTacToe
 
-Simple console Tic Tac Toe template written in C++
+Simple Tic-Tac-Toe game in C++ using object-oriented programming.
